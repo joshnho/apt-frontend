@@ -93,7 +93,7 @@ const Signup = props => {
             {/* <LockOutlinedIcon /> */}
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign Up
+            Sign in
           </Typography>
           <form className={classes.form} noValidate onSubmit={handleSubmit}>
             <TextField
@@ -136,14 +136,14 @@ const Signup = props => {
               Sign In
             </Button>
             <Grid container>
-              {/* <Grid item xs>
+              <Grid item xs>
                 <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
-              </Grid> */}
+              </Grid>
               <Grid item>
-                <Link href="/login" variant="body2">
-                  {"Already have an account? Log in"}
+                <Link href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
             </Grid>
