@@ -11,11 +11,7 @@ const Nav = () => {
   };
 
   const username = useSelector(state => state.username);
-  const text = username ? (
-      <h1>{username} is currently logged in</h1>
-  ) : (
-      <h1>Nobody is logged in</h1>
-  );
+  const text = username ? <h1>{username} is currently logged in</h1> : <h1>Nobody is logged in</h1>
   
   return (
     <nav style={{ display: 'flex', justifyContent: 'space-evenly' }}>

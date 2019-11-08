@@ -30,8 +30,10 @@ const newUserToDB = userObj => dispatch => {
   fetch(USERS_URL, config)
     .then(r => r.json())
     .then(data => {
-      dispatch(setUserAction(data.user));
-      localStorage.setItem('token', data.token);
+      if (data.user){
+        dispatch(setUserAction(data.user));
+        localStorage.setItem('token', data.token)
+      };
     });
 };
 
@@ -56,8 +58,10 @@ const loginUserToDB = userCredentials => dispatch => {
   fetch(LOGIN_URL, config)
     .then(r => r.json())
     .then(data => {
-      dispatch(setUserAction(data.user));
-      localStorage.setItem('token', data.token);
+      if (data.user){
+        dispatch(setUserAction(data.user));
+        localStorage.setItem('token', data.token)
+      };
     });
 };
 

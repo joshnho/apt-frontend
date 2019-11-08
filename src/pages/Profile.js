@@ -23,9 +23,9 @@ class Profile extends React.Component {
     }
 
     handleDelete = (id) => {
-        const test = this.state.appointments.filter(appointment => appointment.id !== id)
+        const updatedAppointments = this.state.appointments.filter(appointment => appointment.id !== id)
         this.setState({
-            appointments: test
+            appointments: updatedAppointments
         })
     }
 

@@ -1,0 +1,33 @@
+/* .listings-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-right: 50;
+    background-color: #ffffff;
+} */
+
+/* .listing {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+} */
+
+.listing-img{
+    width: 400px;
+    height: 300px;
+}
+
+.listings-box{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.signupsignin-page{
+    height: 93vh;
+}
+
+.listing-detail-img {
+    width: 50vw;
+    height: 70vh;
+}

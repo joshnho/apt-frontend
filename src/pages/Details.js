@@ -20,12 +20,12 @@ class Details extends React.Component{
         return <h1>Log in to schedule an appointment!</h1>
     }
 
-
     render(){
         return (
+            
             <div>
                 <h1>Apartment Details</h1>
-                <img src={this.state.details.img} alt='apartment'/><br/>
+                <img src={this.state.details.img} alt='apartment' className='listing-detail-img'/><br/>
                 Bedrooms: {this.state.details.bedrooms > 0 ? this.state.details.bedrooms : "Studio"}<br/>
                 ${this.state.details.rent} / month<br/>
                 Location: {this.state.details.location}<br/>

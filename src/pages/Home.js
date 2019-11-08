@@ -1,10 +1,9 @@
 import React from 'react';
-import Listings from '../Components/Listings'
+import Listings from '../Components/Listings/Listings'
 
 class Home extends React.Component {
     state = {
         allListings: [],
-        loggedIn: false
     }
 
     componentDidMount(){
@@ -18,17 +17,14 @@ class Home extends React.Component {
             })
     };
 
-    allListings = () =>{
-        return this.state.allListings.map(listing => {
-            return <Listings listing={listing} key={'listing ' + listing.id} id={listing.id} />
-        })
-    }
-
     render(){
         return(
             <div>
-                <h1>All Apartments</h1>
-                {this.allListings()}
+
+                <div className='listings-box'>
+                    <h1>All Apartments</h1>
+                    <Listings className='listing-component' allListings={this.state.allListings}/>
+                </div>
             </div>
         )
     }

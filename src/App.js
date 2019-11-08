@@ -4,6 +4,7 @@ import { BrowserRouter as Router} from 'react-router-dom'
 import Routes from './Routes'
 import Nav from './Components/Nav'
 import userActions from './redux/actions';
+import "./style.css";
 
 class App extends Component {
   state = {
