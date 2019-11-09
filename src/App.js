@@ -7,16 +7,16 @@ import userActions from './redux/actions';
 import "./style.css";
 
 class App extends Component {
-  state = {
-    loggedIn: false
-  }
+  // state = {
+  //   loggedIn: false
+  // }
 
   componentDidMount(){
     if(localStorage.token){
       this.props.persistUser()
-      this.setState({
-        loggedIn: true
-      })
+      // this.setState({
+      //   loggedIn: true
+      // })
     }
   }
   render(){

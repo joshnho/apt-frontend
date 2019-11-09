@@ -31,3 +31,24 @@
     width: 50vw;
     height: 70vh;
 }
+
+.banner-img{
+    width: 100vw;
+    height: 60vh;
+}
+
+.banner-text{
+    margin-top: 1% ;
+    margin-left: 40%;
+    position: absolute;
+    z-index: 1;
+    background: rgba(169, 169, 169, 0.7);
+    text-align: center;
+    padding: 2em;
+    /* border-radius: 20px; */
+    font-weight: bold;
+}
+
+.banner-button {
+    font-weight: 900;
+}
