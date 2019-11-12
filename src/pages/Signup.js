@@ -53,20 +53,26 @@ const Signup = props => {
     password: ''
   });
 
+  const [formValidation, setFormValidation] = useState({
+    errors: ''
+  })
+
   // Controlled form functions
   const handleChange = e =>
     setSignupForm({ ...signupForm, [e.target.name]: e.target.value });
+    console.log(signupForm)
 
   const handleSubmit = e => {
     e.preventDefault();
     const { history } = props;
 
-    // if (localStorage.token) {
-      dispatch(userActions.newUserToDB(signupForm));
+    dispatch(userActions.newUserToDB(signupForm));
+    if (localStorage.token){
       history.push('/')
-    // } else {
-      // window.location.reload()
-    // };
+    } else {
+      setFormValidation({ ...formValidation, errors: true})
+      console.log(formValidation)
+    }
   };
 
   const { username, password } = signupForm;

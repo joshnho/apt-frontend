@@ -20,9 +20,24 @@ class Details extends React.Component{
         return <h1>Log in to schedule an appointment!</h1>
     }
 
+    handleSaveButton =() => {
+        const token = localStorage.token
+        
+        fetch('http://localhost:3000/saved_listings', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization' : `bearer ${token}`
+            },
+            body: JSON.stringify({
+                listing_id: this.state.details.id,
+
+            })
+        }).then(res => res.json())
+    }
+
     render(){
         return (
-            
             <div>
                 <h1>Apartment Details</h1>
                 <img src={this.state.details.img} alt='apartment' className='listing-detail-img'/><br/>
@@ -33,6 +48,7 @@ class Details extends React.Component{
                 Utils Included: {this.state.details.utilties ? this.state.details.utilties : "None"}<br/>
                 {this.state.details.description}<br/>
                 {localStorage.token ? <AppointmentForm listingInfo={this.props.details} detailState={this.state.details}/> : this.noUserApptForm()}
+                <button onClick={this.handleSaveButton}>Save for later</button>
             </div>
         )
     }

@@ -33,6 +33,8 @@ const newUserToDB = userObj => dispatch => {
       if (data.user){
         dispatch(setUserAction(data.user));
         localStorage.setItem('token', data.token)
+      } else {
+        sessionStorage.setItem('errors', data.errors)
       };
     });
 };

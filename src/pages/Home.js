@@ -23,10 +23,10 @@ class Home extends React.Component {
             <div>
                 <div className='homepage-banner'>
                     <div className='banner-text'>
-                        <h1>Book your listing today!</h1><br/>
+                        <h1>Book your appointment today!</h1><br/>
                         <Button color='primary' ><span className='banner-button'>View Listings</span></Button>
                     </div>
-                    <img src="https://www.highconstruction.com/imagevault/publishedmedia/te2ww9d3r6hmjuo71o15/Madison_Banner.jpg" class="banner-img" alt="banner 2 bedroom superior" />
+                    <img src="http://www.laceygrouplimited.com/wp-content/uploads/revslider/homepage-banner1/53ae1-lacey-group-bodhi-apartments-street-exterior.jpg" className="banner-img" alt="banner 2 bedroom superior" />
                 </div>
                 {/* <h1>All Available Listings</h1> */}
                 <div className='listings-box'>

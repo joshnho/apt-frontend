@@ -1,21 +1,6 @@
-/* .listings-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding-right: 50;
-    background-color: #ffffff;
-} */
-
-/* .listing {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-} */
-
 .listing-img{
-    width: 400px;
-    height: 300px;
+    width: 100%;
+    height: 200px;
 }
 
 .listings-box{
@@ -33,13 +18,14 @@
 }
 
 .banner-img{
-    width: 100vw;
-    height: 60vh;
+    width: 98vw;
+    height: 70vh;
 }
 
 .banner-text{
-    margin-top: 1% ;
-    margin-left: 40%;
+    margin-top: 10%;
+    margin-left: 23%;
+    width: 50vw;
     position: absolute;
     z-index: 1;
     background: rgba(169, 169, 169, 0.7);

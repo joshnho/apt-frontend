@@ -10,8 +10,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@material-ui/icons/Menu';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,35 +34,41 @@ const Nav = (props) => {
     };
 
     const username = useSelector(state => state.username);
-    // const text = username ? <h1>{username} is currently logged in</h1> : <h1>Nobody is logged in</h1>
-    // const text = username ? username : null
     const classes = useStyles();
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
     return (
         <div className={classes.root}>
-        <AppBar position="fixed">
-            <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <Link to="/" style={{ color: 'white', textDecoration: 'none'}}>Home</Link>
-            </IconButton>
-            <Typography variant="h5" className={classes.title}>
-              {username ? <Button color="inherit"><Link to="/profile" style={{ color: 'white', textDecoration: 'none'}}>{username}'s Profile</Link></Button> : null}
-            </Typography>
-            {!username ? <Button color="inherit"><Link to="/login" style={{ color: 'white', textDecoration: 'none'}} >Login</Link></Button> : null}
-            {username ? <Button color="inherit" onClick={handleLogout}>Logout</Button> : null}
-            </Toolbar>
-        </AppBar>
-        <br/><br/><br/>
+          <AppBar position="fixed">
+              <Toolbar>
+                {username ? <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} style={{ color: 'white', textDecoration: 'none'}}><MenuIcon /></Button> : null}
+                <Menu
+                  id="simple-menu"
+                  anchorEl={anchorEl}
+                  keepMounted
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}>
+                  <MenuItem onClick={handleClose}><Link to="/profile" style={{ color: 'black', textDecoration: 'none'}}>My Profile</Link></MenuItem>  
+                </Menu>
+              <Typography variant="h5" className={classes.title}>
+                <Button color="inherit"><Link to="/" style={{ color: 'white', textDecoration: 'none'}}>Home</Link></Button>
+              </Typography>
+              {!username ? <Button color="inherit"><Link to="/login" style={{ color: 'white', textDecoration: 'none'}} >Login</Link></Button> : null}
+              {!username ? <Button color="inherit"><Link to="/signup" style={{ color: 'white', textDecoration: 'none'}} >Signup</Link></Button> : null}
+              {username ? <Button color="inherit" onClick={handleLogout}>{username} Logout</Button> : null}
+              </Toolbar>
+          </AppBar>
+          <br/><br/><br/>
         </div>
-
-        // <nav style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-        // {text}
-        // <Link to="/">Home</Link>
-        // {username ? <Link to="/profile">Profile</Link> : null}
-        // {!username ? <Link to="/signup">Signup</Link> : null}
-        // {!username ? <Button color="#FFFFFF" onClick={handleLoginClick}>Login</Button> : null}
-        // {username ? <Button color="#FFFFFF" onClick={handleLogout}>Logout</Button> : null}
-        // </nav>
     );
 }
 export default withRouter(Nav);

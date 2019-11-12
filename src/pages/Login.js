@@ -5,7 +5,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
-import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,19 +12,6 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import userActions from '../redux/actions';
-
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="textSecondary" align="center">
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://material-ui.com/">
-//         Your Website
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -91,8 +77,9 @@ const LoginPage = props => {
             <Typography component="h1" variant="h5">
                 Sign in
             </Typography>
-            <form className={classes.form} noValidate onSubmit={handleSubmit}>
+            <form className={classes.form} onSubmit={handleSubmit}>
                 <TextField
+                required
                 variant="outlined"
                 margin="normal"
                 required
@@ -106,9 +93,9 @@ const LoginPage = props => {
                 autoFocus
                 />
                 <TextField
+                required
                 variant="outlined"
                 margin="normal"
-                required
                 fullWidth
                 name="password"
                 label="Password"
@@ -118,10 +105,6 @@ const LoginPage = props => {
                 onChange={handleChange}
                 autoComplete="current-password"
                 />
-                {/* <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-                /> */}
                 <Button
                 type="submit"
                 fullWidth
@@ -132,20 +115,12 @@ const LoginPage = props => {
                 Sign In
                 </Button>
                 <Grid container>
-                {/* <Grid item xs>
-                    <Link href="#" variant="body2">
-                    Forgot password?
-                    </Link>
-                </Grid> */}
                 <Grid item>
                     <Link href="/signup" variant="body2">
                       {"Don't have an account? Sign Up"}
                     </Link>
                 </Grid>
                 </Grid>
-                <Box mt={5}>
-                {/* <Copyright /> */}
-                </Box>
             </form>
             </div>
         </Grid>
