@@ -15,6 +15,8 @@ npm start #starts the app
 
 The app should open up automatically after running the last command
 
+Check out the [demo](https://www.loom.com/share/57bf9254e7054b17a638db171fea9de4) for a guided walkthrough
+
 
 ## How it was made
 ### Front-End
