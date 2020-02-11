@@ -6,7 +6,7 @@ Apartmenthunter is an app made to make finding/viewing apartments easier
 
 First set up backend [here](https://github.com/Joshikgs/apt-backend) -- (required for app to functional properly)
 
-Open your terminal, navigate to the project directory, then enter bash commands :
+Then, open your terminal, navigate to the project directory, then enter bash commands :
 
 ```bash
 npm install
