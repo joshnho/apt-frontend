@@ -9,9 +9,12 @@ First set up backend [here](https://github.com/Joshikgs/apt-backend) -- (require
 Then, open your terminal, navigate to the project directory, then enter bash commands :
 
 ```bash
-npm install
-npm start
+npm install #installs necessary packages needed to run the app
+npm start #starts the app
 ```
+
+The app should open up automatically after running the last command
+
 
 ## How it was made
 ### Front-End
